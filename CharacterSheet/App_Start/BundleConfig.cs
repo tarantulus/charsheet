@@ -25,6 +25,11 @@ namespace CharacterSheet
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/signalr").Include(
+                        "~/Scripts/jquery.signalR-1.0.0.min.js"                        
+                        ));
+            
+
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                        "~/Scripts/Bootstrap.min.js"
                 ));
@@ -33,7 +38,8 @@ namespace CharacterSheet
                        "~/Scripts/knockout-3.0.0.js",
                        "~/Scripts/knockout.mapping-latest.js",
                        "~/Scripts/xpTable.js",
-                       "~/Models/Knockout/Character.js"
+                       "~/Models/Knockout/Character.js",
+                       "~/Scripts/HubJs.js"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

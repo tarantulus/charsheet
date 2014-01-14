@@ -6,7 +6,7 @@
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")        
+        @Scripts.Render("~/bundles/modernizr")                
     </head>
     <body>
      <!-- Fixed navbar -->
@@ -22,7 +22,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Load</a></li>
-                <li><a href="#">Save</a></li>
+                <li><a href="#" class="save">Save</a></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">Sections</li>
                 <li><a href="#">Main</a></li>
@@ -59,7 +59,9 @@
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/jqueryui")
         @Scripts.Render("~/bundles/bootstrap")
-        @Scripts.Render("~/bundles/knockout");
+        @Scripts.Render("~/bundles/knockout")        
+        @Scripts.Render("~/bundles/signalr")
+        <script type="text/javascript" src="/signalr/hubs" ></script>        
         @RenderSection("scripts", required: false)
     </body>
 </html>

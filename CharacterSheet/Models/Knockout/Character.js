@@ -13,16 +13,16 @@
 
 function InfoViewModel() {
     //Info
-    this.charName = ko.observable("Ross");
-    this.playerName = ko.observable("Norbert");
-    this.race = ko.observable("Norbert");
-    this.religion = ko.observable("Norbert");
-    this.alignment = ko.observable("Norbert");
-    this.experience = ko.observable(6000);
-    this.classList = ko.observable("Wizard 3");
-    this.bab = ko.observable(2);
-    this.totalHp = ko.observable(23);
-    this.damageTaken = ko.observable(0);
+    this.charName = ko.observable();
+    this.playerName = ko.observable();
+    this.race = ko.observable();
+    this.religion = ko.observable();
+    this.alignment = ko.observable();
+    this.experience = ko.observable();
+    this.classList = ko.observable();
+    this.bab = ko.observable();
+    this.totalHp = ko.observable();
+    this.damageTaken = ko.observable();
     this.level = ko.computed(function () {
         for (level in xpTable) {
             if (xpTable[level] > this.experience())
@@ -32,33 +32,42 @@ function InfoViewModel() {
     this.hp = ko.computed(function () {
         return this.totalHp() - this.damageTaken()        
     }, this);
+    this.size = ko.observableArray([
+        "tiny",
+        "small",
+        "medium",
+        "large",
+        "huge",
+        "collosal"
+    ]);
+    this.sizeclass = ko.observable();
 }
 
 var ivm = new InfoViewModel();
 
 function StatsViewModel() {
     //Stats
-    this.str = ko.observable(18);
+    this.str = ko.observable();
     this.strmod = ko.computed(function () {
         return GetMod(this.str());
     }, this);
-    this.dex = ko.observable(18);
+    this.dex = ko.observable();
     this.dexmod = ko.computed(function () {
         return GetMod(this.dex());
     }, this);
-    this.con = ko.observable(18);
+    this.con = ko.observable();
     this.conmod = ko.computed(function () {
         return GetMod(this.con());
     }, this);
-    this.int = ko.observable(18);
+    this.int = ko.observable();
     this.intmod = ko.computed(function () {
         return GetMod(this.int());
     }, this);
-    this.wis = ko.observable(18);
+    this.wis = ko.observable();
     this.wismod = ko.computed(function () {
         return GetMod(this.wis());
     }, this);
-    this.cha = ko.observable(18);
+    this.cha = ko.observable();
     this.chamod = ko.computed(function () {
         return GetMod(this.cha());
     }, this);
@@ -70,15 +79,15 @@ var stvm = new StatsViewModel()
 
 function SavesViewModel() {
     //Saves
-    this.reflexSaveBase = ko.observable(0);
-    this.reflexSaveTmod = ko.observable(0);
-    this.reflexSaveMmod = ko.observable(0);
-    this.fortitudeSaveBase = ko.observable(0);
-    this.fortitudeSaveTmod = ko.observable(0);
-    this.fortitudeSaveMmod = ko.observable(0);
-    this.willSaveBase = ko.observable(0);
-    this.willSaveTmod = ko.observable(0);
-    this.willSaveMmod = ko.observable(0);
+    this.reflexSaveBase = ko.observable();
+    this.reflexSaveTmod = ko.observable();
+    this.reflexSaveMmod = ko.observable();
+    this.fortitudeSaveBase = ko.observable();
+    this.fortitudeSaveTmod = ko.observable();
+    this.fortitudeSaveMmod = ko.observable();
+    this.willSaveBase = ko.observable();
+    this.willSaveTmod = ko.observable();
+    this.willSaveMmod = ko.observable();
 
     this.reflexSave = ko.computed(function () {
         return this.reflexSaveTmod() + this.reflexSaveMmod() + this.reflexSaveBase();
@@ -91,10 +100,3 @@ function SavesViewModel() {
     }, this);
 }
 var svm = new SavesViewModel();
-
-// Activates knockout.js
-ko.applyBindings({
-    info: ivm,
-    stats: stvm,
-    saves: svm
-});
