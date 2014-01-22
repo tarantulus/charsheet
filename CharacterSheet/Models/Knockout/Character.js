@@ -19,7 +19,7 @@ function InfoViewModel() {
     this.religion = ko.observable();
     this.alignment = ko.observable();
     this.experience = ko.observable();
-    this.classList = ko.observable();
+    this.classList = ko.observableArray();
     this.bab = ko.observable();
     this.totalHp = ko.observable();
     this.damageTaken = ko.observable();

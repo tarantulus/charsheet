@@ -12,10 +12,13 @@
             ivm.charName(char.charName);
             ivm.playerName(char.playerName);
             ivm.race(char.race);
+            ivm.classList(char.classList);
             ivm.religion(char.religion);
             ivm.alignment(char.alignment);
             ivm.experience(char.experience);
-            ivm.classList(char.classlist);
+            $.getJSON('/Scripts/classList.js', function(data) {
+                ivm.classList(data);
+            });
             ivm.bab(char.bab);
             ivm.totalHp(char.totalHp);
             ivm.damageTaken(char.damageTaken);

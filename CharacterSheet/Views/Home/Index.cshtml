@@ -9,8 +9,11 @@
 
         <div>
             <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
-            Classes: <strong data-bind="text: classList"></strong>
-            <input class="input-sm editBox" data-bind="value: classList" />
+            Classes: <strong data-bind="foreach:classList"><span></span></strong>
+            <select class="input-sm editBox" data-bind="foreach:classList">
+                <option data-bind="value: Class.text, text: Class.text"/>
+            </select>
+                
         </div>
 
 

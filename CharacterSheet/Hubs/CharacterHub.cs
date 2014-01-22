@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -20,7 +21,7 @@ namespace CharacterSheet.Hubs
                 religion = "Dispater",
                 alignment = "Chaotic Evil",
                 experience = 6000,
-                classList = "Barbarian 2",
+                classList = "",
                 bab = 1,
                 totalHp = 1,
                 damageTaken = 1,
