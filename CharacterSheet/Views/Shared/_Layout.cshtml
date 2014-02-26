@@ -6,7 +6,13 @@
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")                
+        @Styles.Render("~/Content/themes/base/css")
+        @Scripts.Render("~/bundles/modernizr")
+          <style>
+  .ui-progressbar-value {
+    background-color: #ccc;
+  }
+  </style>
     </head>
     <body>
      <!-- Fixed navbar -->
@@ -57,6 +63,7 @@
         </footer>
 
         @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/multiselect") 
         @Scripts.Render("~/bundles/jqueryui")
         @Scripts.Render("~/bundles/bootstrap")
         @Scripts.Render("~/bundles/knockout")        

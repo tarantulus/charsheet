@@ -9,13 +9,14 @@
 
         <div>
             <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
-            Classes: <strong data-bind="foreach:classList"><span></span></strong>
-            <select class="input-sm editBox" data-bind="foreach:classList">
-                <option data-bind="value: Class.text, text: Class.text"/>
-            </select>
+            Classes: <strong data-bind="foreach: classList"><span></span></strong>
+            <ul id="my-select" name="my-select[]" class="input-sm editBox" data-bind="foreach:{data:classList, afterRender:renderHandler}" style="height:100px;overflow-y:scroll;width:40%">
+                <li data-bind="value: Class.text, text: Class.text"/>
+            </ul>
+            <ul id="sortable" class="input-sm editBox" style="height:100px;overflow-y:scroll;width:40%"><li>No class</li></ul>
                 
         </div>
-
+        <div></div>
 
         <div>
             <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
