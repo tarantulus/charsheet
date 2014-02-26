@@ -35,11 +35,13 @@ namespace CharacterSheet
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/knockout").Include(
+                       "~/Scripts/Functions.js",
                        "~/Scripts/knockout-3.0.0.js",
                        "~/Scripts/knockout.mapping-latest.js",
                        "~/Scripts/xpTable.js",
                        "~/Models/Knockout/Character.js",
                        "~/Scripts/HubJs.js"
+                       
                 ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

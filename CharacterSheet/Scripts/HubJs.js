@@ -44,7 +44,6 @@
 
   
     ivm.renderHandler = function(elements, data) {
-
         if (elements[1].parentNode.children.length === ko.toJS(ivm.classList).length) {
             console.log("loaded");
             $("#sortable").sortable({
@@ -55,6 +54,7 @@
                 helper: "clone",
                 revert: "invalid"
             });
+            listFilter($(elements[1].parentNode), $(elements[1].parentNode));            
 
         }
     };

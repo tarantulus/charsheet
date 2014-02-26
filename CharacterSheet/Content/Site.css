@@ -12,6 +12,7 @@ body {
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
     margin: 0;
     padding: 0;
+    padding-top: 70px;
 }
 
 a {
@@ -528,6 +529,33 @@ input[type="checkbox"].input-validation-error {
     display: none;
 }
 
+.input-half {
+    width:150px;
+}
+
+/* multiselect
+----------------------------------------------------------*/
+
+.multiselect {
+    height:100px;
+    overflow-y:scroll;
+    width:40%;
+    display:inline-block;
+    font-size: 12px;
+    line-height: 1.5;
+    background-color:#fff;
+    border:1px solid black;
+    padding-left:10px;
+}
+    .multiselect * {
+        list-style-type: none;
+    }
+.multiselect-left {
+    float: left;
+}
+.multiselect-right {
+    float: right;
+}
 
 /* tables
 ----------------------------------------------------------*/
