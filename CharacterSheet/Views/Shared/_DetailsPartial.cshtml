@@ -1,0 +1,190 @@
+﻿    <div id="CharacterDetail" class="row" data-bind="with: info">
+        <div class="col-md-6">
+            <div>
+                <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                Character Name: <strong data-bind="text: charName"></strong>
+                <input class="input-sm editBox" data-bind="value: charName" />
+            </div>
+
+
+            <div>
+                <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                Classes: <div data-bind="foreach: chosenClasses"><span data-bind="text: Class.text"></span><br /></div>
+                <br />
+                <ul id="my-select" name="my-select[]" class="editBox multiselect multiselect-left" data-bind="foreach: { data: classList, afterRender: renderHandler }">
+                    <li>
+                        <a data-bind="attr: { href: Class.href }, text: Class.text" target="_blank"></a>
+                    </li>
+                </ul>
+                <ul id="sortable" data-bind="event: { stop: addClass }" class="editBox multiselect"></ul>
+
+            </div>
+            <div></div>
+
+            <div>
+                <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                Race: <strong data-bind="text: race"></strong>
+                <input class="input-sm editBox" data-bind="value: race" />
+            </div>
+
+
+            <div>
+                <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                Religion: <strong data-bind="text: religion"></strong>
+                <input class="input-sm editBox" data-bind="value: religion" />
+            </div>
+
+
+
+        </div>
+        <div class="col-md-6">
+            <div>
+                <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                Player Name: <strong data-bind="text: playerName"></strong>
+                <input class="input-sm editBox" data-bind="value: playerName" />
+            </div>
+
+
+            <div>
+                <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half"></span>
+                level: <strong data-bind="text: level"></strong>
+            </div>
+            <div>
+                <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                Experience: <strong data-bind="text: experience"></strong>
+                <input class="input-sm editBox" data-bind="value: experience" />
+            </div>
+
+
+            <div>
+                <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                Alignment: <strong data-bind="text: alignment"></strong>
+                <input class="input-sm editBox" data-bind="value: alignment" />
+            </div>
+
+        </div>
+    </div>
+    <div class="row well">
+        <div class="col-md-3" data-bind="with: info">
+            <div>
+                <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                BAB: <strong data-bind="text: bab"></strong>
+                <input class="input-sm editBox" data-bind="value: bab" />
+            </div>
+            <div>
+                <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                HP: <strong data-bind="text: hp"></strong>
+                <input class="input-sm editBox" data-bind="value: totalHp" />
+            </div>
+            <div>
+                <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                dmg taken: <strong data-bind="text: damageTaken"></strong>
+                <input class="input-sm editBox" data-bind="value: damageTaken" />
+            </div>
+            <div>
+                <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                Size: <strong data-bind="text: sizeclass"></strong>
+                <select class="input-sm editBox" data-bind="options: size, value: sizeclass"></select>
+            </div>
+
+        </div>
+        <div class="col-md-9" data-bind="with: saves">
+            <div>Saves</div>
+            <div class="col-md-4">
+                <div class="col-md-12">
+                    <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                    Fortitude: <strong data-bind="text: fortitudeSave"></strong>
+                    <input class="input-sm editBox" data-bind="value: fortitudeSaveBase" />
+                </div>
+                <div class="col-md-12">
+                    <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                    temp mod: <strong data-bind="text: fortitudeSaveTmod"></strong>
+                    <input class="input-sm editBox" data-bind="value: fortitudeSaveTmod" />
+                </div>
+                <div class="col-md-12">
+                    <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                    misc mod: <strong data-bind="text: fortitudeSaveMmod"></strong>
+                    <input class="input-sm editBox" data-bind="value: fortitudeSaveMmod" />
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="col-md-12">
+                    <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                    Reflex: <strong data-bind="text: reflexSave"></strong>
+                    <input class="input-sm editBox" data-bind="value: reflexSaveBase" />
+                </div>
+                <div class="col-md-12">
+                    <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                    temp mod: <strong data-bind="text: reflexSaveTmod"></strong>
+                    <input class="input-sm editBox" data-bind="value: reflexSaveTmod" />
+                </div>
+                <div class="col-md-12">
+                    <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                    misc mod: <strong data-bind="text: reflexSaveMmod"></strong>
+                    <input class="input-sm editBox" data-bind="value: reflexSaveMmod" />
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="col-md-12">
+                    <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                    Will: <strong data-bind="text: willSave"></strong>
+                    <input class="input-sm editBox" data-bind="value: willSaveBase" />
+                </div>
+                <div class="col-md-12">
+                    <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                    temp mod: <strong data-bind="text: willSaveTmod"></strong>
+                    <input class="input-sm editBox" data-bind="value: willSaveTmod" />
+                </div>
+                <div class="col-md-12">
+                    <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                    misc mod: <strong data-bind="text: willSaveMmod"></strong>
+                    <input class="input-sm editBox" data-bind="value: willSaveMmod" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row well">
+        <div class="col-md-6" data-bind="with: stats">
+            <div>
+                <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                STR: <strong data-bind="text: str"></strong>
+                mod: <strong data-bind="text: strmod"></strong>
+                <input class="input-sm editBox" data-bind="value: str" />
+            </div>
+            <div>
+                <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                DEX: <strong data-bind="text: dex"></strong>
+                mod: <strong data-bind="text: dexmod"></strong>
+                <input class="input-sm editBox" data-bind="value: dex" />
+            </div>
+            <div>
+                <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                CON: <strong data-bind="text: con"></strong>
+                mod: <strong data-bind="text: conmod"></strong>
+                <input class="input-sm editBox" data-bind="value: con" />
+            </div>
+            <div>
+                <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                INT: <strong data-bind="text: int"></strong>
+                mod: <strong data-bind="text: intmod"></strong>
+                <input class="input-sm editBox" data-bind="value: int" />
+            </div>
+            <div>
+                <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                WIS: <strong data-bind="text: wis"></strong>
+                mod: <strong data-bind="text: wismod"></strong>
+                <input class="input-sm editBox" data-bind="value: cha" />
+            </div>
+            <div>
+                <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                CHA: <strong data-bind="text: cha"></strong>
+                mod: <strong data-bind="text: chamod"></strong>
+                <input class="input-sm editBox" data-bind="value: cha" />
+            </div>
+        </div>
+        <div class="col-md-6" data-bind="with: stats">
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            grapple: <strong data-bind="text: grapple"></strong>
+        </div>
+    </div>
+

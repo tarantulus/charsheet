@@ -1,14 +1,12 @@
 ﻿function GetMod(val) {
     var calc
-    if(val<10)
-    {
+    if (val < 10) {
         calc = -1;
     }
-    else
-    {
+    else {
         calc = 1;
     }
-    return calc * Math.floor(Math.abs((val-10)) / 2, 1)
+    return calc * Math.floor(Math.abs((val - 10)) / 2, 1)
 }
 
 function InfoViewModel() {
@@ -20,6 +18,17 @@ function InfoViewModel() {
     this.alignment = ko.observable();
     this.experience = ko.observable();
     this.classList = ko.observableArray();
+    this.chosenClasses = ko.observableArray([]);
+    this.addClass = function (event, ui) {
+        for (var i = 0; i < this.classList().length; i++)
+        {
+            if (this.classList()[i].Class.text === ui.item[0].innerText) {
+                this.chosenClasses.push(this.classList()[i]);
+                return;
+            }
+
+        }
+    }
     this.bab = ko.observable();
     this.totalHp = ko.observable();
     this.damageTaken = ko.observable();
@@ -30,7 +39,7 @@ function InfoViewModel() {
         };
     }, this);
     this.hp = ko.computed(function () {
-        return this.totalHp() - this.damageTaken()        
+        return this.totalHp() - this.damageTaken()
     }, this);
     this.size = ko.observableArray([
         "tiny",
@@ -71,7 +80,7 @@ function StatsViewModel() {
     this.chamod = ko.computed(function () {
         return GetMod(this.cha());
     }, this);
-    this.grapple = ko.computed(function () {        
+    this.grapple = ko.computed(function () {
         return this.strmod() + ivm.bab()
     }, this);
 }

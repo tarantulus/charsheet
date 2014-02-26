@@ -44,10 +44,11 @@
 
   
     ivm.renderHandler = function(elements, data) {
-        if (elements[1].parentNode.children.length === ko.toJS(ivm.classList).length) {
+        if (elements[1].parentNode.children.length === ivm.classList().length) {
             console.log("loaded");
             $("#sortable").sortable({
-                revert: true
+                revert: true,
+                receive: function (event, ui) { ivm.addClass(event, ui) }
             });
             $(elements[1].parentNode).children().draggable({
                 connectToSortable: "#sortable",
