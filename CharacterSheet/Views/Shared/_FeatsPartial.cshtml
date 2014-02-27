@@ -1,1 +1,19 @@
-﻿
+﻿<div id="CharacterFeats" class="row" data-bind="with: info">
+    <div class="col-md-6">
+        <div>
+            <div data-bind="foreach: chosenFeats">
+                <span data-bind="text: Feat.text"></span>
+                <br />
+            </div>
+            <br />
+            <ul class="multiselect multiselect-tall multiselect-left" data-bind="foreach: { data: featList, afterRender: renderHandler }">
+                <li><span rel="tooltip" data-bind="attr: { title: Description }">
+                    <a data-bind="attr: { href: Feat.href }, text: Feat.text" target="_blank"></a>
+                    </span>
+                </li>
+            </ul>
+            <ul id="sortable" data-bind="event: { stop: addFeat }" class="multiselect multiselect-tall"></ul>
+        </div>                
+
+    </div>
+</div>

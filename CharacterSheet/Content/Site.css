@@ -550,6 +550,11 @@ input[type="checkbox"].input-validation-error {
     .multiselect * {
         list-style-type: none;
     }
+
+.multiselect-tall {
+        height:300px;
+}
+
 .multiselect-left {
     float: left;
 }

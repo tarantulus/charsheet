@@ -13,11 +13,15 @@
             ivm.playerName(char.playerName);
             ivm.race(char.race);
             ivm.classList(char.classList);
+            ivm.featList([]);
             ivm.religion(char.religion);
             ivm.alignment(char.alignment);
             ivm.experience(char.experience);
             $.getJSON('/Scripts/classList.js', function(data) {
                 ivm.classList(data);
+            });
+            $.getJSON('/Scripts/featsList.js', function (data) {
+                ivm.featList(data);
             });
             ivm.bab(char.bab);
             ivm.totalHp(char.totalHp);
@@ -69,7 +73,7 @@
                 saves: svm
             });
             $('.save').click(function() {
-                $.connection.characterHub.server.saveCharacter(ivm, stvm, svm);
+                charSheet.hub.server.saveCharacter(ivm, stvm, svm);
             });
         });
 

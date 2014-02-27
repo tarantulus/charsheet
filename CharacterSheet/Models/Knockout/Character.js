@@ -18,12 +18,23 @@ function InfoViewModel() {
     this.alignment = ko.observable();
     this.experience = ko.observable();
     this.classList = ko.observableArray();
-    this.chosenClasses = ko.observableArray([]);
+    this.chosenClasses = ko.observableArray();
     this.addClass = function (event, ui) {
         for (var i = 0; i < this.classList().length; i++)
         {
             if (this.classList()[i].Class.text === ui.item[0].innerText) {
                 this.chosenClasses.push(this.classList()[i]);
+                return;
+            }
+
+        }
+    }
+    this.featList = ko.observableArray();
+    this.chosenFeats = ko.observableArray();
+    this.addFeat = function (event, ui) {
+        for (var i = 0; i < this.featList().length; i++) {
+            if (this.featList()[i].Feat.text === ui.item[0].innerText) {
+                this.chosenFeats.push(this.featList()[i]);
                 return;
             }
 
