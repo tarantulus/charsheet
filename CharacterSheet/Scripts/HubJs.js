@@ -43,6 +43,8 @@
             stvm.int(char.intelligence);
             stvm.wis(char.wisdom);
             stvm.cha(char.charisma);
+
+            skvm.Appraise(4);
         };
     }
 
@@ -50,12 +52,13 @@
     ivm.renderHandler = function(elements, data) {
         if (elements[1].parentNode.children.length === ivm.classList().length) {
             console.log("loaded");
-            $("#sortable").sortable({
+            var sortableul = $(elements[1].parentNode).next('ul');
+            sortableul.sortable({
                 revert: true,
                 receive: function (event, ui) { ivm.addClass(event, ui) }
             });
             $(elements[1].parentNode).children().draggable({
-                connectToSortable: "#sortable",
+                connectToSortable: sortableul,
                 helper: "clone",
                 revert: "invalid"
             });
@@ -70,7 +73,8 @@
             ko.applyBindings({
                 info: ivm,
                 stats: stvm,
-                saves: svm
+                saves: svm,
+                skills: skvm
             });
             $('.save').click(function() {
                 charSheet.hub.server.saveCharacter(ivm, stvm, svm);

@@ -120,3 +120,43 @@ function SavesViewModel() {
     }, this);
 }
 var svm = new SavesViewModel();
+
+function SkillsViewModel() {
+    this.Appraise = ko.observable();
+    this.Balance = ko.observable();
+    this.Bluff = ko.observable();
+    this.Climb = ko.observable();
+    this.Concentration = ko.observable();
+    this.Craft = ko.observableArray();
+    this.DecipherScript = ko.observable();
+    this.Diplomacy = ko.observable();
+    this.DisableDevice = ko.observable();
+    this.Disguise = ko.observable();
+    this.EscapeArtist = ko.observable();
+    this.Forgery = ko.observable();
+    this.GatherInfo = ko.observable();
+    this.HandleAnimal = ko.observable();
+    this.Heal = ko.observable();
+    this.Hide = ko.observable();
+    this.Intimidate = ko.observable();
+    this.Jump = ko.observable();
+    this.Knowledge = ko.observableArray();
+    this.Listen = ko.observable();
+    this.MoveSilently = ko.observable();
+    this.OpenLock = ko.observable();
+    this.Perform = ko.observableArray();
+    this.Profession = ko.observableArray();
+    this.Ride = ko.observable();
+    this.Search = ko.observable();
+    this.SenseMotive = ko.observable();
+    this.SleightofHand = ko.observable();
+    this.Spellcraft = ko.observable();
+    this.Spot = ko.observable();
+    this.Survival = ko.observable();
+    this.Swim = ko.observable();
+    this.Tumble = ko.observable();
+    this.UseMagicDev = ko.observable();
+    this.UseRope = ko.observable();
+}
+
+var skvm = new SkillsViewModel();
