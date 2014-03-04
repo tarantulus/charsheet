@@ -45,25 +45,88 @@
             stvm.cha(char.charisma);
 
             skvm.Appraise(4);
+            skvm.Appraise (4);
+            skvm.Balance (4);
+            skvm.Bluff (4);
+            skvm.Climb (4);
+            skvm.Concentration (4);
+            skvm.Craft ({
+                "Craft": {
+                    "text": "Pottery",
+                    "value": 4,
+                    "mod": stvm.intmod
+                }
+            });
+            skvm.DecipherScript (4);
+            skvm.Diplomacy (4);
+            skvm.DisableDevice (4);
+            skvm.Disguise (4);
+            skvm.EscapeArtist (4);
+            skvm.Forgery (4);
+            skvm.GatherInfo (4);
+            skvm.HandleAnimal (4);
+            skvm.Heal (4);
+            skvm.Hide (4);
+            skvm.Intimidate (4);
+            skvm.Jump (4);
+            skvm.Knowledge ([{
+                "Knowledge": {
+                    "text": "Arcana",
+                    "value": 4,
+                    "mod": stvm.intmod
+                },
+                "Knowledge": {
+                    "text": "Nature",
+                    "value": 4,
+                    "mod": stvm.intmod
+                }
+            }]);
+            skvm.Listen (4);
+            skvm.MoveSilently (4);
+            skvm.OpenLock (4);
+            skvm.Perform ([{
+                "Perform": {
+                    "text": "Dance",
+                    "value": 4,
+                    "mod": stvm.chamod
+                },
+                "Perform": {
+                    "text": "Sing",
+                    "value": 4,
+                    "mod": stvm.chamod
+                }
+            }]);
+            skvm.Profession([{
+                "Profession": {
+                    "text": "Butcher",
+                    "value": 4,
+                    "mod": stvm.wismod
+                },
+                "Profession": {
+                    "text": "Luthier",
+                    "value": 4,
+                    "mod": stvm.wismod
+                }
+            }]);
+            skvm.Ride (4);
+            skvm.Search (4);
+            skvm.SenseMotive (4);
+            skvm.SleightofHand (4);
+            skvm.Spellcraft (4);
+            skvm.Spot (4);
+            skvm.Survival (4);
+            skvm.Swim (4);
+            skvm.Tumble (4);
+            skvm.UseMagicDev (4);
+            skvm.UseRope (4);
         };
     }
 
   
     ivm.renderHandler = function(elements, data) {
         if (elements[1].parentNode.children.length === ivm.classList().length) {
-            console.log("loaded");
-            var sortableul = $(elements[1].parentNode).next('ul');
-            sortableul.sortable({
-                revert: true,
-                receive: function (event, ui) { ivm.addClass(event, ui) }
-            });
-            $(elements[1].parentNode).children().draggable({
-                connectToSortable: sortableul,
-                helper: "clone",
-                revert: "invalid"
-            });
-            listFilter($(elements[1].parentNode), $(elements[1].parentNode));            
-
+            console.log("loaded");                      
+            $(elements[1]).multiselect();
         }
     };
     var charSheet = new characterSheet();

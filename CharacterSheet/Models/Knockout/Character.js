@@ -29,6 +29,15 @@ function InfoViewModel() {
 
         }
     }
+    this.removeClass = function (event, ui) {
+        for (var i = 0; i < this.classList().length; i++) {
+            if (this.classList()[i].Class.text === ui.draggable[0].innerText) {
+                this.chosenClasses.remove(this.classList()[i]);
+                break;
+            }
+            return;
+        }
+    }
     this.featList = ko.observableArray();
     this.chosenFeats = ko.observableArray();
     this.addFeat = function (event, ui) {

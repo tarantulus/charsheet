@@ -1,50 +1,219 @@
-﻿<div class="row" data-bind="with: skills">
+﻿<div class="row">
     <div class="col-md-6">
-        <div><strong>Appraise</strong> INT <input type="text" data-bind="value: Appraise}"/><p data-bind="text: Appraise}"></p></div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Appraise: <strong data-bind="text: skills.Appraise"></strong>
+            INT: <strong data-bind="text: stats.intmod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.Appraise" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Balance: <strong data-bind="text: skills.Balance"></strong>
+            DEX: <strong data-bind="text: stats.dexmod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.Balance" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Bluff: <strong data-bind="text: skills.Bluff"></strong>
+            CHA: <strong data-bind="text: stats.chamod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.Bluff" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Climb: <strong data-bind="text: skills.Climb"></strong>
+            STR: <strong data-bind="text: stats.strmod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.Climb" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Concentration: <strong data-bind="text: skills.Concentration"></strong>
+            CON: <strong data-bind="text: stats.conmod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.Concentration" />
+        </div>
+    <span data-bind="foreach: skills.Craft">
+            <div>
+                <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+                Craft (<span contenteditable data-bind="text: Craft.text"></span>): <strong data-bind="text: Craft.value"></strong>
+                INT: <strong data-bind="text: Craft.mod"></strong>
+                <input class="input-sm editBox" data-bind="value: Craft.value" />
+            </div>
+        </span>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Decipher Script: <strong data-bind="text: skills.DecipherScript"></strong>
+            INT: <strong data-bind="text: stats.intmod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.DecipherScript" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Diplomacy: <strong data-bind="text: skills.Diplomacy"></strong>
+            CHA: <strong data-bind="text: stats.chamod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.Diplomacy" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Disable Device: <strong data-bind="text: skills.DisableDevice"></strong>
+            INT: <strong data-bind="text: stats.intmod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.DisableDevice" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Disguise: <strong data-bind="text: skills.Disguise"></strong>
+            CHA: <strong data-bind="text: stats.chamod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.Disguise" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Escape Artist: <strong data-bind="text: skills.EscapeArtist"></strong>
+            DEX: <strong data-bind="text: stats.dexmod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.EscapeArtist" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Forgery: <strong data-bind="text: skills.Forgery"></strong>
+            INT: <strong data-bind="text: stats.intmod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.Forgery" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Gather Info: <strong data-bind="text: skills.GatherInfo"></strong>
+            CHA: <strong data-bind="text: stats.chamod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.GatherInfo" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Handle Animal: <strong data-bind="text: skills.HandleAnimal"></strong>
+            CHA: <strong data-bind="text: stats.chamod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.HandleAnimal" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Heal: <strong data-bind="text: skills.Heal"></strong>
+            WIS: <strong data-bind="text: stats.wismod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.Heal" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Hide: <strong data-bind="text: skills.Hide"></strong>
+            DEX: <strong data-bind="text: stats.dexmod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.Hide" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Intimidate: <strong data-bind="text: skills.Intimidate"></strong>
+            CHA: <strong data-bind="text: stats.chamod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.Intimidate" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Jump: <strong data-bind="text: skills.Jump"></strong>
+            STR: <strong data-bind="text: stats.strmod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.Jump" />
+        </div>
     </div>
     <div class="col-md-6">
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
-        <div><strong>Appraise</strong>INT</div>
+        <div data-bind="foreach: skills.Knowledge">
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Knowledge (<span contenteditable data-bind="text: Knowledge.text"></span>): <strong data-bind="    text: Knowledge.value"></strong>
+            INT: <strong data-bind="text: Knowledge.mod"></strong>
+            <input class="input-sm editBox" data-bind="value: Knowledge.value" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Listen: <strong data-bind="text: skills.Listen"></strong>
+            WIS: <strong data-bind="text: stats.wismod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.Listen" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Move Silently: <strong data-bind="text: skills.MoveSilently"></strong>
+            DEX: <strong data-bind="text: stats.intmod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.MoveSilently" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Open Lock: <strong data-bind="text: skills.OpenLock"></strong>
+            DEX: <strong data-bind="text: stats.dexmod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.OpenLock" />
+        </div>
+        <div data-bind="foreach: skills.Perform">
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Perform (<span contenteditable data-bind="text: Perform.text"></span>): <strong data-bind="    text: Perform.value"></strong>
+            CHA: <strong data-bind="text: Perform.mod"></strong>
+            <input class="input-sm editBox" data-bind="value: Perform.value" />
+            <span contenteditable data-bind="text: Perform.text">
+        </div>
+        <div data-bind="foreach: skills.Profession">
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Profession (<span contenteditable data-bind="text: Profession.text"></span>): <strong data-bind="    text: Profession.value"></strong>
+            CHA: <strong data-bind="text: Profession.mod"></strong>
+            <input class="input-sm editBox" data-bind="value: Profession.value" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Ride: <strong data-bind="text: skills.Ride"></strong>
+            DEX: <strong data-bind="text: stats.dexmod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.Ride" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Search: <strong data-bind="text: skills.Search"></strong>
+            INT: <strong data-bind="text: stats.intmod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.Search" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Sense Motive: <strong data-bind="text: skills.SenseMotive"></strong>
+            WIS: <strong data-bind="text: stats.wismod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.SenseMotive" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Sleight of Hand: <strong data-bind="text: skills.SleightofHand"></strong>
+            DEX: <strong data-bind="text: stats.dexmod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.SleightofHand" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Spellcraft: <strong data-bind="text: skills.Spellcraft"></strong>
+            INT: <strong data-bind="text: stats.intmod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.Spellcraft" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Spot: <strong data-bind="text: skills.Spot"></strong>
+            WIS: <strong data-bind="text: stats.wismod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.Spot" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Survival: <strong data-bind="text: skills.Survival"></strong>
+            WIS: <strong data-bind="text: stats.wismod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.Survival" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Swim: <strong data-bind="text: skills.Swim"></strong>
+            STR: <strong data-bind="text: stats.strmod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.Swim" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Tumble: <strong data-bind="text: skills.Tumble"></strong>
+            DEX: <strong data-bind="text: stats.dexmod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.Tumble" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Use Magic Dev: <strong data-bind="text: skills.UseMagicDev"></strong>
+            CHA: <strong data-bind="text: stats.chamod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.UseMagicDev" />
+        </div>
+        <div>
+            <span rel="tooltip" title="Edit" class="glyphicon glyphicon-half glyphicon-pencil edit"></span>
+            Use Rope: <strong data-bind="text: skills.UseRope"></strong>
+            DEX: <strong data-bind="text: stats.dexmod"></strong>
+            <input class="input-sm editBox" data-bind="value: skills.UseRope" />
+        </div>
     </div>
 </div>

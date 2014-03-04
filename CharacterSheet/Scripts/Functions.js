@@ -29,4 +29,34 @@
         });
     }
 
+    (function ($) {
+
+        $.fn.multiselect = function () {
+            var elem = this;
+            var sortableul = elem.parent().next('ul');
+            sortableul.sortable({
+                revert: true,
+                receive: function (event, ui) { ivm.addClass(event, ui) }
+            }).droppable({ greedy: true });
+
+            $('body').droppable({
+                drop: function (event, ui) {
+                    ivm.removeClass(event, ui);
+                    ui.draggable.remove();
+                }
+            });
+
+            elem.siblings().draggable({
+                connectToSortable: sortableul,
+                helper: "clone",
+                revert: "invalid"
+            });
+            listFilter(elem.parent(), elem.parent());
+
+        }
+
+    }(jQuery));
+
+
+
 
